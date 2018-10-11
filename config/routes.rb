@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  namespace :api do
+  namespace :Api do
+
 
     post "/users" => 'users#create'
 
@@ -14,5 +15,4 @@ Rails.application.routes.draw do
     delete "/donation_requests/:id" => 'donation_requests#destroy'
 
   end
-
 end
