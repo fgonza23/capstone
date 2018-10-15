@@ -10,9 +10,9 @@ class Api::DonationsController < ApplicationController
 
   def create
     @donation = Donation.new(
-                            donor_id: params[:donor_id],
+                            user_id: current_user.id,
                             messages: params[:messages],
-                            donation_request_id: 
+                            donation_request_id:
                             )
 
     donation.save

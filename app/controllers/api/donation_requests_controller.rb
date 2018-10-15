@@ -1,7 +1,12 @@
 class Api::DonationRequestsController < ApplicationController
 
+  before_action :authenticate_user
+
+
   def index
-    @donation_request = Donation_request.all
+
+    @donation_request = current_user.donation_requests
+    # @donation_request = DonationRequest.all
 
     search_term = params[:search]
     sort_attribute = params[:sort]
@@ -22,7 +27,8 @@ class Api::DonationRequestsController < ApplicationController
 
 
   def create
-    @donation_request = Donation_request.new(
+    @donation_request = DonationRequest.new(
+                                            user_id: current_user.id,
                                             date: params[:date],
                                             meal: params[:meal],
                                             family_size: params[:family_size]
@@ -36,13 +42,13 @@ class Api::DonationRequestsController < ApplicationController
 
 
   def show
-    @donation_request = Donation_request.find(params[:id])
+    @donation_request = DonationRequest.find(params[:id])
     render 'show.json.jbuilder'
   end
 
 
   def update
-    @donation_request = Donation_request.find(params[:id])
+    @donation_request = DonationRequest.find(params[:id])
 
     @donation_request.date = params[:date] || @donation_request.date
     @donation_request.meal = params[:meal] || @donation_request.meal
@@ -57,7 +63,7 @@ class Api::DonationRequestsController < ApplicationController
     
 
   def destroy
-    @donation_request = Donation_request.find(params[:id])
+    @donation_request = DonationRequest.find(params[:id])
     @donation_request.destroy
     render json: {message: "Donation request cancelled"}
   end

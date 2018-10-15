@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
-  namespace :Api do
+  namespace :api do
 
 
+    post "/sessions" => "sessions#create"
+
+    get "/users" => 'users#index'
     post "/users" => 'users#create'
 
-    get "/donation" => 'donation#index'
-    post "/donation" => 'donation#create'
-    delete "/donation/:id" => 'donation#destroy'
+
+    get "/donations" => 'donations#index'
+    post "/donations" => 'donations#create'
+    delete "/donations/:id" => 'donations#destroy'
 
     get "/donation_requests" => 'donation_requests#index'
     post "/donation_requests" => 'donation_requests#create'
