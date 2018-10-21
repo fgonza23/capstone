@@ -1,0 +1,1 @@
+json.array! @reccuring_events, partial: 'reccuring_event', as: :reccuring_event

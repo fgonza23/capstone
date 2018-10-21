@@ -11,11 +11,10 @@ class Api::DonationsController < ApplicationController
   def create
     @donation = Donation.new(
                             user_id: current_user.id,
-                            messages: params[:messages],
-                            donation_request_id:
+                            messages: params[:messages]
                             )
 
-    donation.save
+    @donation.save
     render 'show.json.jbuilder'
   end
     
