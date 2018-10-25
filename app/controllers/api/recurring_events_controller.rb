@@ -3,16 +3,15 @@ class Api::RecurringEventsController < ApplicationController
   before_action :authenticate_user
 
   def new
-    @reccuring_event = ReccuringEvent.new
+    @recurring_event = RecurringEvent.new
 
   end
 
   def create
 
-    @recurring_event = RecurringEvents.new(
+    @recurring_event = RecurringEvent.new(
                                           user_id: current_user.id,
-                                          date: params[:date],
-                                          time: params[:time],
+                                          datetime: params[:datetime],
                                           meal: params[:meal]
                                           )
 

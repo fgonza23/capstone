@@ -1,1 +1,1 @@
-json.partial! @reccuring_event, partial: 'reccuring_event', as: :reccuring_event
+json.partial! @recurring_event, partial: 'recurring_event', as: :recurring_event

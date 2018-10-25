@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   namespace :api do
 
-    get 
-
+    post "/recurring_events" => 'recurring_events#create'
+           
 
     post "/sessions" => "sessions#create"
 

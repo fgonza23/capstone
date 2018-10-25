@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_many :donations
   has_many :donation_requests
+  has_many :recurring_events
 
 
 end
