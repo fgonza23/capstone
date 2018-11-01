@@ -34,14 +34,6 @@ ActiveRecord::Schema.define(version: 2018_10_25_030211) do
     t.integer "user_id"
   end
 
-  create_table "reccuring_events", force: :cascade do |t|
-    t.date "date"
-    t.time "time"
-    t.integer "meal"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "recurring_events", force: :cascade do |t|
     t.datetime "datetime"
     t.integer "meal"

@@ -7,7 +7,7 @@
             <h5 class="card-title">{{ donation_requests }}</h5>
               <div class="card-text">
               <ul>
-                <li v-for="ingredient in recipe.formatted.ingredients">{{ ingredient }}</li>
+                <li v-for=" donation_request in donation_requests"> {{ donation_request }}</li>
               </ul>
             </div>
             <router-link class="btn btn-primary" v-bind:to="'/donation_requests/' + donation_requests.id">More Info</router-link>
