@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
   namespace :api do
 
+    get "/recurring_events/new" => 'recurring_events#new'
     post "/recurring_events" => 'recurring_events#create'
+
            
 
     post "/sessions" => "sessions#create"
 
+
+    get "/signup" => "users#new"
     get "/users" => 'users#index'
     post "/users" => 'users#create'
 

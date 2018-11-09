@@ -1,11 +1,15 @@
 class Api::DonationRequestsController < ApplicationController
 
-  before_action :authenticate_user
+  # belongs_to :recurring_event
+
+  # before_action :authenticate_user
+
+  # scope :future, -> { where('created_at > ?', DateTime.now) }
 
 
   def index
 
-    @donation_request = current_user.donation_requests
+    @donation_requests = DonationRequest.all
     # @donation_request = DonationRequest.all
 
     search_term = params[:search]
@@ -24,7 +28,6 @@ class Api::DonationRequestsController < ApplicationController
 
     render 'index.json.jbuilder'
   end
-
 
   def create
     @donation_request = DonationRequest.new(
@@ -46,6 +49,7 @@ class Api::DonationRequestsController < ApplicationController
     render 'show.json.jbuilder'
   end
 
+  
 
   def update
     @donation_request = DonationRequest.find(params[:id])
