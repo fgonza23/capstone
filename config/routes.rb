@@ -24,5 +24,8 @@ Rails.application.routes.draw do
     patch "/donation_requests/:id" => 'donation_requests#update'
     delete "/donation_requests/:id" => 'donation_requests#destroy'
 
+    get "/open_box" => 'donation_requests#open_box'
+    get "/close_box" => 'donation_requests#close_box_s'
+
   end
 end

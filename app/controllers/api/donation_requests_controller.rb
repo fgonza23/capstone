@@ -71,6 +71,29 @@ class Api::DonationRequestsController < ApplicationController
     @donation_request.destroy
     render json: {message: "Donation request cancelled"}
   end
+
+  def open_box
+
+    device = RubySpark::Device.new("3b003b000647373034353237", "981e56fc328ec3279f37dd7baa60b7a5c604b12c")
+
+
+    device.function("toggleLights", "on")
+
+
+    render json: {message: "success"}
+  end
+
+  def close_box
+
+    device = RubySpark::Device.new("3b003b000647373034353237", "981e56fc328ec3279f37dd7baa60b7a5c604b12c")
+
+
+
+    device.function("toggleLights", "off")
+
+
+    render json: {message: "success"}
+  end
 end
 
     
