@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     delete "/donation_requests/:id" => 'donation_requests#destroy'
 
     get "/open_box" => 'donation_requests#open_box'
-    get "/close_box" => 'donation_requests#close_box_s'
+    get "/close_box" => 'donation_requests#close_box'
 
   end
 end
