@@ -80,7 +80,7 @@ class Api::DonationRequestsController < ApplicationController
     device.function("toggleLights", "on")
 
 
-    render json: {message: "success"}
+   
   end
 
   def close_box
@@ -89,7 +89,7 @@ class Api::DonationRequestsController < ApplicationController
 
 
 
-    device.function("toggleLights", "off")
+    device.function("toggleLights", "flash")
 
 
     render json: {message: "success"}
