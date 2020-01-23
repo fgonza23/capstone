@@ -1,4 +1,4 @@
-# app/services/recurring_events/create.rb
+2# app/services/recurring_events/create.rb
 class RecurringEvents::Create < Struct.new(:user, :params)
   def call
     recurring_event = user.recurring_events.build(params)
