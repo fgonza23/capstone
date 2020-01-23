@@ -24,7 +24,7 @@ class Api::DonationRequestsController < ApplicationController
       @donation_requests = @donation_requests.order(sort_attribute => sort_order)
     elsif sort_attribute
       @donation_requests = @donation_requests.order(sort_attribute)
-    end 
+    end
 
     render 'index.json.jbuilder'
   end
@@ -49,7 +49,7 @@ class Api::DonationRequestsController < ApplicationController
     render 'show.json.jbuilder'
   end
 
-  
+
 
   def update
     @donation_request = DonationRequest.find(params[:id])
@@ -64,7 +64,7 @@ class Api::DonationRequestsController < ApplicationController
       render json: {errors: @donation_request.errors.full_messages}, status: :unprocessable_entity
     end
   end
-    
+
 
   def destroy
     @donation_request = DonationRequest.find(params[:id])
@@ -96,4 +96,4 @@ class Api::DonationRequestsController < ApplicationController
   end
 end
 
-    
+

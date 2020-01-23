@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     get "/recurring_events/new" => 'recurring_events#new'
     post "/recurring_events" => 'recurring_events#create'
 
-           
+
 
     post "/sessions" => "sessions#create"
 
@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     get "/signup" => "users#new"
     get "/users" => 'users#index'
     post "/users" => 'users#create'
+
 
 
     get "/donations" => 'donations#index'
